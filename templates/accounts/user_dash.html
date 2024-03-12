@@ -1,0 +1,11 @@
+{% extends "base/navbar.html" %}
+{% block body %}
+<div class="container mt-3">
+    <h2 class="text-center">Welcome {{user}}!!!!</h2>
+    <div class="row">
+        <h3><strong>Welcome to Online Shopping Store..</strong></h3>
+        <a href="{% url "shop" %}">Shopping Cart</a>
+    </div>
+</div>
+
+{% endblock  %}

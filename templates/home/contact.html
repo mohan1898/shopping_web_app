@@ -1,0 +1,20 @@
+{% extends "base/navbar.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<div class="container mt-4">
+    <div class="row">
+        <div class="col my-4"> 
+          <form method="POST">
+            {{form | crispy }}
+            {% csrf_token %}
+            <input class="btn btn-primary py-3 px-5" type="submit" value="submit">
+          </form>    
+        </div>
+        <div class="col mt-6 my-3 mx-3 d-flex">
+            <img class="img-fluid" src="{% static 'images/contact.jpg' %}">
+        </div>
+    </div>
+</div>
+{% include "base/footer.html" %}
+{% endblock  %}

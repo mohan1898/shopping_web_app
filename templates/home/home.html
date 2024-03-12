@@ -1,0 +1,52 @@
+{% extends "base/navbar.html" %} 
+{% block body %} 
+{% load static %} 
+{% include "base/header.html" %}
+<div class="container my-4">
+  <div id="spinner" class="spinner">
+    <div id="content" class="content">
+
+  <img 
+  src="{% static 'images/img3.jpg' %}"
+  class="img-fluid"
+  width="100%"
+  height="200px"
+/>
+  <div class="d-flex align-items-center justify-content-around my-3">
+    {% for i in post %}
+    <div class="card mx-3" >
+      <img src="{{i.img.url}}" class="card-img-top" width="300px" height="200px" alt="..."/>
+      <div class="card-body">
+        <h5 class="card-title">{{i.title}}</h5>
+        <p class="card-text">{{i.description}}</p>
+        <a class="nav-link active" href="{% url 'shop' %}" class="btn btn-primary">Shop...</a>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  <div class="row">
+    <h1 class="text-center mt-3">Shop Our Latest Arrivals!</h1>
+    <h2 class="text-center mt-3">Elevate Your Look Explore Our Fashion Favorites</h2>
+  </div>
+  <div class="row">
+    <h1 class="text-center mt-3">Browse Artisanal Creations <span class="badge bg-secondary"></span></h1>
+    <h2 class="text-center mt-3">Statement Pieces for Every Occasion <span class="badge bg-secondary"></span></h2>
+    <div class="d-flex justify-content-center">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>   
+      </div>
+    </div>
+    <div class="col">
+      <div class="d-flex align-items-center justify-content-around my-3">
+        <img src="{% static 'images/res.jpeg' %}">
+    </div>
+    <div class="alert alert-primary" role="alert">
+      <a class="nav-link" href="{% url 'shop' %}">Shop here..</a>
+    </div>
+  </div>
+  </div>
+</div>
+</div>
+</div>
+{% include "base/footer.html" %}
+{% endblock %}

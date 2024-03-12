@@ -1,0 +1,28 @@
+{% extends "base/navbar.html" %}
+{% load static %}
+{% block body %}
+<div class="container mt-3">
+<div class="row">
+    <div class="col">
+        <h2 class="text-center">Shop Items</h2>
+    </div>
+</div>
+<ul class="nav justify-content-center">
+    <li class="nav-item">
+      <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Shopify</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'men' %}">Men</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="{% url 'women' %}">Women</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="">Kids</a>
+    </li>
+  </ul>
+  <img src="{% static 'images/stock1.jpg' %}" class="img-fluid p-3 mx-3" width="auto" height="150px">
+  <iframe></iframe>
+</div>
+{% include "base/footer.html" %}
+{% endblock  %}

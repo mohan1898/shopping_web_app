@@ -1,0 +1,17 @@
+{% extends "base/navbar.html" %}
+{% block body %}
+<div class="container mt-4">
+    <div class="row">
+    <h2 class="text-center"><mark>women store</mark></h2>
+    {% for j in items %}
+    <div class="card mx-2 my-2" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{j.category}}</h5>
+          <p class="card-text">With Shopify, you can create a professional-looking online storefront</p>
+          <a href="{% url 'cart' id=j.id %}">Click here..</a>      
+        </div>
+      </div>
+    {% endfor %}
+</div>
+</div>
+{% endblock  %}

@@ -1,0 +1,21 @@
+{% extends "base/navbar.html" %}
+{% block body %}
+<h2 class="text-center mt-2">women shopping</h2>
+<div class="col">
+    <a class="nav-link active" href="{% url 'women' %}">Go to Women</a>
+</div>
+<div class="container my-3 d-flex justify-content-around">
+    {% for j in items %}
+    <div class="card mx-3 my-2" style="width: 18rem;">
+        <img class="card-img-top" width="250" height="200" src="{{j.img.url}}" alt="Card image cap">
+        <div class="card-body">
+          <h5 class="card-title">{{j.name}}</h5>
+          <h5 class="card-title">{{j.price}} rs </h5>
+          <p class="card-text">{{j.brand}}</p>
+          <button class="btn btn-primary">Add to Cart</button>       
+        </div>
+    </div>  
+    {% endfor %}
+</div>
+
+{% endblock  %}

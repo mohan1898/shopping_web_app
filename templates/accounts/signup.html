@@ -1,0 +1,48 @@
+{% extends "base/navbar.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+{% block body %}
+<div class="container">
+  {% if messages %}
+  <div class="alert alert-primary" role="alert">
+      {% for message in messages %}
+      {{ message }}
+      {% endfor %}
+  </div>
+  {% endif %}
+
+<div class="row mt-4">
+  
+        <div class="col-md-6">
+            <!-- Your signup form goes here -->
+            <form method="POST">
+                <div class="form-group">
+                    {% csrf_token %}
+                    <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Username</label>
+                        <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Name" name="username"/>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">Email</label>
+                        <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email" name="email"/>
+                      </div>
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">password</label>
+                        <input type="password" class="form-control" id="exampleFormControlInput1" placeholder="password" name="password"/>
+                      </div>
+                   <input class="btn btn-primary" type="submit" value="Register">
+                   <h5 class="text-success">Already Have an Acoount? <a href="{% url 'login' %}">Login Here</a></h5> 
+                                      
+                </div>                           
+            </form>
+        </div>
+
+       
+        <div class="col-md-6">
+          <div class="card mx-3 my-2" style="width: 18rem;">
+            <img class="res">
+            </div>
+        </div>
+</div>
+</div>
+{% endblock  %}
